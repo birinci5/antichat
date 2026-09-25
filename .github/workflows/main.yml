@@ -21,12 +21,12 @@ jobs:
 
     - name: Gradle Kur ve Derle
       run: |
-        gradle wrapper
-        ./gradlew build
+        sudo apt-get update
+        sudo apt-get install -y gradle
+        gradle build --no-daemon
 
     - name: Jar Dosyasini Yukle
       uses: actions/upload-artifact@v4
       with:
         name: AntiCheat-jar
         path: build/libs/*.jar
-      
