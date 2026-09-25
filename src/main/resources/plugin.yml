@@ -1,0 +1,22 @@
+name: AntiCheat
+version: '${version}'
+main: com.anticheat.core.AntiCheatPlugin
+api-version: '1.21'
+author: SizinAdiniz
+description: 'Paket seviyesinde gelismis anti-cheat sistemi (Reach, Speed, Fly, NoFall, Killaura, AutoClicker, Timer, NoSwing)'
+softdepend: [ProtocolLib]
+
+commands:
+  anticheat:
+    aliases: [ac]
+    description: 'AntiCheat yonetim komutu'
+    usage: '/<command> <toggle|vl|exempt|reset|reload|config>'
+    permission: anticheat.admin
+
+permissions:
+  anticheat.admin:
+    description: 'Anti-cheat uyarilarini gorme ve yonetim komutlarini kullanma'
+    default: op
+  anticheat.bypass:
+    description: 'Tum anti-cheat kontrollerinden tam muafiyet'
+    default: false

@@ -1,0 +1,51 @@
+prefix: "&8[&cAntiCheat&8]&7"
+
+messages:
+  alert: "%prefix% &e%player% &7oyuncusu &b%check% &7suphesi! &7(VL: &c%vl%&7/%maxvl%) &8- %info%"
+  kick-broadcast: "%prefix% &c%player% &7oyuncusu &c%check%&7 VL limitini asarak &4ATILDI&7."
+  kick-reason: "Hile Suphesi / Baglantinizi Kontrol Edin"
+  no-permission: "&cBu komutu kullanma yetkiniz yok."
+
+# VL'ler bu araliktan sonra 1 azalir (yanlis pozitiflerin birikmesini onler)
+violation-decay-seconds: 20
+
+# Hareket kontrolleri her tick yerine kac tick'te bir calissin (performans)
+movement-tick-throttle: 3
+
+checks:
+  reach:
+    enabled: true
+    max-distance: 4.2
+    ping-tolerance-divisor: 3000.0
+    kick-vl: 6
+  speed:
+    enabled: true
+    max-blocks-per-tick: 0.65
+    ice-multiplier: 1.6
+    water-multiplier: 1.4
+    speed-potion-multiplier: 1.5
+    kick-vl: 8
+  fly:
+    enabled: true
+    max-air-ticks: 60
+    kick-vl: 6
+  nofall:
+    enabled: true
+    min-fall-distance: 4.5
+    kick-vl: 5
+  killaura:
+    enabled: true
+    min-switch-ms: 150
+    kick-vl: 4
+  autoclicker:
+    enabled: true
+    max-cps: 21
+    kick-vl: 5
+  timer:
+    enabled: true
+    max-packets-per-second: 24
+    kick-vl: 6
+  noswing:
+    enabled: true
+    swing-window-ms: 250
+    kick-vl: 5
