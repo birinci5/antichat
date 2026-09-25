@@ -1,0 +1,32 @@
+name: AntiCheat Jar Derle
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Repoyu Klonla
+      uses: actions/checkout@v4
+
+    - name: JDK 21 Kur
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Gradle Kur ve Derle
+      run: |
+        gradle wrapper
+        ./gradlew build
+
+    - name: Jar Dosyasini Yukle
+      uses: actions/upload-artifact@v4
+      with:
+        name: AntiCheat-jar
+        path: build/libs/*.jar
+      
